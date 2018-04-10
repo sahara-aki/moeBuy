@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		body {
+			font-size: 12px;
+		}
+		li {
+			list-style: none;
+		}
+		a {
+			text-decoration: none;
+			color: #7b6156;
+		}
+		.container {
+			background: #eee;
+		}
+		.clear {
+			clear: both;
+		}
+		.top {
+			width: 1002px;
+			height: 47px;
+			background: #f4f2ef;
+			border: 1px solid #c3b9b3;
+			border-top: none;
+			margin: 0 auto;
+		}
+		.top li{
+			float: left;
+		}
+		.topleft {
+			padding: 12px 0 0 10px;
+		}
+		.topleft li {
+			padding: 0 9px;
+			line-height: 19px;
+			height: 19px;
+		}
+		.topright {
+			float: right;
+		}
+		.topright li {
+			height: 21px;
+			line-height: 21px;
+			padding: 0 8px;
+			border:1px solid #c3b9b3;
+		}
+		.topright .newmg {
+			margin-right: 3px;
+		}
+		.topright .sinaimg {
+			padding: 0;
+			margin: 0 9px;
+		}
+		.topright .toplast {
+			border: none;
+			border-left: 1px solid #d5d3d0;
+			padding-right: 21px;
+		}
+		.search {
+			width: 760px;
+			margin: 0 auto;
+			margin-top: 59px;
+			text-align: center;
+		}
+		.search>ul>li {
+			float: left;
+			line-height: 36px;
+		}
+		.search .Amazon {
+			width: 103px;
+			position: relative;
+		}
+		.Amazon img {
+			position: absolute;
+			left: 18px;
+			top: 16px;
+			width: 8px;
+			
+		}
+		.Amazon a {
+			display: block;
+			height: 34px;
+			border: 1px solid #bebab4;
+			background: #f2f0ed;
+		}
+		.Amazon:hover img {
+			transform: rotate(-90deg);
+			transition: all 0.5s; 
+		} 
+		.Amazon ul {
+			width: 103px;
+			display: none;
+			position: absolute;
+		}
+		.Amazon ul li {
+			height: 25px;
+			border: 1px solid #bebab4;
+			border-top: none;
+			line-height: 25px;
+		}
+		.search input {
+			width:566px;
+			padding-left: 16px;
+			height: 34px;
+			border: none;
+			border-top: 1px solid #bebab4;
+			border-bottom: 1px solid #bebab4;
+		}
+		.search .searchButton {
+			display: block;
+			width: 62px;
+			margin: 0 auto;
+			height: 34px;
+			border: 1px solid #bebab4;
+		}
+		.notice {
+			width: 500px;
+			margin: 55px auto 0;
+			height: 30px;
+		}
+		.notice li {
+			position: relative;
+			height: 30px;
+			line-height: 30px;
+			padding: 0 24px 0 64px;
+			background: #66adc4;
+		}
+		.notice li:nth-child(1) {
+			float: left;
+		}
+		.notice li:nth-child(2) {
+			float: right;
+		}
+
+		.notice li span {
+			display: block;
+			border: 1px solid #dedede;
+			width: 42px;
+			height: 22px;
+			text-align: center;
+			line-height: 22px;
+			background: #fff;
+			position: absolute;
+			left: 12px;
+			bottom: 16px;
+		}
+		.seller {
+			padding-top: 14px;
+			width: 1000px;
+			height: 78px;
+			margin: 18px auto 0;
+			background: #e5e5e5;
+		}
+		.seller li {
+			float: left;
+			margin-left: 23px;
+		}
+		.main {
+			width: 1002px;
+			margin: 30px auto 0;
+
+		}
+		.mainleft {
+			float: left;
+			width:745px;
+			overflow: hidden;
+		}
+		.mainleft li:hover {
+			border-color: #e68f58;
+			transition:all 0.5s;
+		}
+		.mainleft li:hover span{
+			color: #be4b0e;
+		}
+		.mainleft li:hover div:nth-of-type(1) {
+			opacity: 0.8;
+			transition:all 0.5s;
+		}
+		.mainleft li:hover span:nth-of-type(1) {
+			opacity: 0.8;
+			transition:all 0.5s;
+		}
+		.mainright {
+			float: right;
+			width: 220px;
+		}
+		.banner {
+			margin-bottom: 35px;
+			padding: 5px;
+			border: 1px solid #c4b9ae;
+			height: 280px;
+			width:730px;
+			overflow: hidden;
+			position: relative;
+		}
+		.banul {
+			position: relative;
+
+		}
+		.banul li {
+			position: absolute;
+		}
+		
+		.banner img {
+			display: block;
+			width: 730px;
+			height: 280px;
+		}
+		.banol li {
+			float: left;
+			margin-left: 7px;
+		}
+		.banol span {
+			display: block;
+			
+			width: 9px;
+			height: 9px;
+			border-radius: 50%;
+			border: 4px solid #454545;
+			background-color: #868a90;
+			cursor: pointer;
+		}
+		.banol .current span{
+			background-color: orange;
+		}
+		.banol {
+			position: absolute;
+			right: 13px;
+			bottom: 12px;
+			z-index: 2;
+		}
+		.title {
+			width: 745px;
+			height: 37px;
+			margin-top: 34px;
+			background: #9e7867;
+			border-bottom: 3px solid #775343;
+			position: relative;
+		}
+		.title img {
+			position: absolute;
+			left: 21px;
+			bottom: 5px;
+		}
+		.title h3 {
+			padding-left: 85px;
+			float: left;
+			font-size: 21px;
+			font-weight: normal;
+			line-height: 37px;
+			color: #fff;
+		}
+		.title span {
+			float: right;
+		}
+		.title span a {
+			color: #d7cac3;
+			line-height: 37px;
+			margin-right: 11px;
+		}
+		.title span a:hover{
+			color: orange;
+			line-height: 37px;
+			margin-right: 11px;
+		}
+		.resContent li {
+			float: left;
+			width: 173px;
+			border: 1px solid #d4d4d4;
+			margin-top: 15px;
+			margin-right: 15px;
+		}
+		.resContent li:nth-of-type(4n) {
+			margin-right: 0;
+		}
+		.resContent li img {
+			display: block;
+			min-width: 100%;
+			max-width: 100%;
+			height: 240px;
+			object-fit: cover;
+
+			margin: 0 auto;
+		}
+		.resContent li span {
+			padding-left: 10px;
+			line-height: 35px;
+		}
+		.resContent li div:nth-of-type(1){
+			padding: 5px;
+			height: 240px;
+			overflow: hidden;
+		}
+		.resContent li div:nth-last-child(1) {
+			height: 38px;
+			border-top: 1px solid #ccc;
+		}
+		.resContent .resPrice {
+			display: block;
+			float: right;
+			border-radius: 4px;
+			border:1px solid #aa5500;
+			margin-top: 6px;
+			margin-right: 8px;
+			padding: 3px 6px;
+			background: #faa40c;
+			color: #fff;
+		}
+		.mainleft .aroundGoods li {
+			margin-right: 15px;
+		}
+		.aroundGoods li:nth-of-type(3n-1) {
+			width: 363px;
+		}
+		.aroundGoods li:nth-of-type(3n) {
+			margin-right: 0;
+		}
+		.footer {
+			width: 1002px;
+			margin: 0 auto;
+			overflow: hidden;
+			padding-top: 57px;
+			padding-bottom: 18px;
+		}
+		.footer ul {
+			float: left;
+			width: 190px;
+			margin: 0 5px;
+			height: 207px;
+		}
+		.footer ul li:nth-of-type(1){
+			line-height: 32px;
+			border-bottom: 1px solid #ddd;
+			margin-bottom: 10px;
+		}
+		.footer ul li:nth-of-type(1) a {
+			color: #555;
+		}
+		.footer ul li {
+			line-height: 24px;
+		}
+		.footer ul li a {
+			color: #999;
+		}
+		.footer .info {
+			overflow: hidden;
+			border-bottom: 1px solid #ddd;
+		}
+		.footer p {
+			text-align: center;
+		}
+		.footer p a {
+			color: #97776a;
+			margin: 0 12px;
+		}
+		.footer p:nth-of-type(1){
+			height: 27px;
+			line-height: 27px;
+			margin-top: 15px;
+		}
+		.footer p:nth-of-type(2){
+			height: 23px;
+			line-height: 23px;
+		}
+		.footer p:nth-of-type(3){
+			height: 42px;
+		}
+		.footer p span {
+			width: 0;
+			height: 100%;
+			display: inline-block;
+			vertical-align: middle;
+		}
+		.footer p img {
+			vertical-align: middle;
+		}
+		
+		.impnotice {
+			border: 1px solid #c4b9ae;
+		}
+		.impnotice li:nth-of-type(1){
+			font-size: 17px;
+			color: #865358;
+			height: 41px;
+			line-height: 41px;
+			padding-left: 60px;
+			background: url(images/bg.png) 0 -1506px no-repeat;
+			background-color: #f4f2ef;
+			
+		}
+		.impnotice li {
+			height: 34px;
+			line-height: 34px;
+			padding-left: 10px;
+			position: relative;
+			background-color: #fff;
+		}
+		.impnotice li:hover {
+			background-color: #eee;
+		}
+		.impnotice li div {
+			width: 3px;
+			height: 26px;
+			position: absolute;
+			left: 0;
+			top: 4px;
+			background: orange;
+			display: none;
+		}
+		.impnotice li:hover div{
+			display: block;
+		}
+		.impnotice li a {
+			color: #404040;
+		}
+		.impnotice li:nth-of-type(2){
+			border-top: 1px solid #c4b9ae;
+			border-bottom: 1px dashed #ccc;
+		}
+		.hot {
+			border: 1px solid #c4b9ae;
+			margin-top: 23px;
+			padding-bottom: 17px;
+			position: relative;
+			overflow: visible;
+		}
+		.hot li {
+			height: 73px;
+			border-bottom: 1px dashed #ccc;
+			background: #fff;
+			position: relative;
+		}
+		.hot li:hover {
+			background-color: #eee;
+		}
+		.hot li:hover div {
+			display: block;
+		}
+		.hot li:nth-of-type(1) {
+			font-size: 18px;
+			color: #775343;
+			padding-left: 40px;
+			line-height: 41px;
+			height: 41px;
+			background: url(images/bg.png) -118px -339px no-repeat;
+			background-color: #f4f2ef;
+			border-bottom: 1px solid #c4b9ae;
+		}
+		.hot li div {
+			position: absolute;
+			width: 3px;
+			height: 50px;
+			background: orange;
+			display: none;
+			left: 0;
+			top: 10px;
+		}
+		.hot li img{
+			display: block;
+			width: 50px;
+			height: 50px;
+			padding: 10px;
+			float: left;
+		}
+		.hot li:hover img{
+			opacity: 0.8;
+		}
+		.hot span {
+			display: block;
+			width: 134px;
+			line-height: 18px;
+			margin-top:9px;
+			color: #ff9900;
+			float: left;
+			font-weight: bold;
+		}
+		.hot span a {
+			color: #404040;
+			font-weight: normal;
+		}
+		.hot li:hover span a {
+			color: #000;
+		}
+		.hot>img {
+			position: absolute;
+			left: 220px;
+			top: 0;
+		}
+		.friend {
+			margin-top: 43px;
+		}
+		.friend li:nth-of-type(1){
+			font-size: 18px;
+			color: #775343;
+			padding-left: 40px;
+			line-height: 41px;
+			height: 41px;
+			background: url(images/bg.png) -118px -339px no-repeat;
+			margin-bottom: 6px;
+		}
+		.friend li:nth-of-type(1)~li img {
+			max-width: 100%;
+			border: 1px solid #d4d4d4;
+			padding: 2px;
+			margin-bottom: 26px;
+		}
+		.floor {
+			position: fixed;
+			left: 0;
+			top: 200px;
+			background: url(images/bg.png) 0 -346px no-repeat;
+		}
+		.floor li {
+			width: 60px;
+			height: 60px;
+			cursor: pointer;
+			position: relative;
+		}
+		.floor li span {
+			display: none;
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 60px;
+			height: 60px;
+			text-align: center;
+			line-height: 60px;
+		}
+		.floor li:hover span {
+			display: block;
+			background: orange;
+			color: #fff;
+		}
+		.floor .active span{
+			display: block;
+			background: orange;
+			color: #fff;
+		}
+
+		@font-face {
+		  font-family: 'iconfont';
+		  src: url('font/iconfont.eot');
+		  src: url('font/iconfont.eot?#iefix') format('embedded-opentype'),
+		  url('font/iconfont.woff') format('woff'),
+		  url('font/iconfont.ttf') format('truetype'),
+		  url('font/iconfont.svg#iconfont') format('svg');
+		}
+		.iconfont{
+		  font-family:"iconfont" !important;
+		  font-size:16px;font-style:normal;
+		  -webkit-font-smoothing: antialiased;
+		  -webkit-text-stroke-width: 0.2px;
+		  -moz-osx-font-smoothing: grayscale;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">			
+		<div class="top">
+			<ul class="topleft">
+				<li><img src="images/logo.gif" alt=""></li>
+				<li class="iconfont">&#xe639;</li>
+				<li><a href="##">注册</a></li>
+				<li><a href="##">登录</a></li>
+			</ul>
+			<ul class="topright">
+				<li class="newmg"><a href="##">新萌购</a></li>
+				<li><a href="##">购物车0件</a></li>
+				<li class="sinaimg"><a href="##"><img src="images/sina.gif" alt=""></a></li>
+				<li class="toplast">萌购汇率：0.061</li>
+			</ul>
+		</div>
+		<div class="search">
+			<ul>
+				<li class="Amazon">
+					<a href="##">Amazon</a>
+					<img src="images/arrow.png">
+					<ul>
+						<li>Amazon</li>
+						<li>骏河屋</li>
+					</ul>
+				</li>
+				<li class="searchContent"><input type="text" placeholder="0A0A0 代购助手辅助您搜索，名称/厂商/ASIN都可以喔~"></li>
+				<li><a href="##" class="searchButton">GO!</a></li>
+			</ul>
+		</div>
+		<div class="clear"></div>
+		<div class="notice">
+			<ul>
+				<li><span>03.23</span>萌购改版功能提前预报~</li>
+				<li><span>03.23</span>E特快费用调整通知</li>
+			</ul>
+		</div>
+		<div class="seller">
+			<ul>
+				<li><a href="##"><img src="images/seller1.jpg" alt=""></a></li>
+				<li><a href="##"><img src="images/seller2.jpg" alt=""></a></li>
+				<li><a href="##"><img src="images/seller3.jpg" alt=""></a></li>
+				<li><a href="##"><img src="images/seller4.jpg" alt=""></a></li>
+			</ul>
+		</div>
+		<div class="main">
+			<div class="mainleft">
+				<div class="banner">
+					<ul class="banul">
+						<li style="z-index: 10"><a href="##"><img src="images/banner/1.jpg" alt=""></a></li>
+						<li style="z-index: 9"><a href="##"><img src="images/banner/2.jpg" alt=""></a></li>
+						<li style="z-index: 8"><a href="##"><img src="images/banner/3.jpg" alt=""></a></li>
+						<li style="z-index: 7"><a href="##"><img src="images/banner/4.jpg" alt=""></a></li>
+						<li style="z-index: 6"><a href="##"><img src="images/banner/5.jpg" alt=""></a></li>
+						<li style="z-index: 5"><a href="##"><img src="images/banner/6.jpg" alt=""></a></li>
+						<li style="z-index: 4"><a href="##"><img src="images/banner/7.jpg" alt=""></a></li>
+						<li style="z-index: 3"><a href="##"><img src="images/banner/8.jpg" alt=""></a></li>
+						<li style="z-index: 2"><a href="##"><img src="images/banner/9.jpg" alt=""></a></li>
+						<li style="z-index: 1"><a href="##"><img src="images/banner/10.jpg" alt=""></a></li>	
+					</ul>
+					<ol class="banol" style="z-index: 999">
+						<li class="current"><span></span></li>
+						<li><span></span></li>
+						<li><span></span></li>
+						<li><span></span></li>
+						<li><span></span></li>
+						<li><span></span></li>
+						<li><span></span></li>
+						<li><span></span></li>
+						<li><span></span></li>
+						<li><span></span></li>
+								
+					</ol>
+				</div>
+				<div class="reserve">
+					<div class="louti">
+						
+					<div class="title">
+						<img src="images/reserve.png">
+						<h3>手办预定</h3>
+						<span><a href="">查看更多></a></span>
+					</div>
+					<ul class="resContent">
+						<li>
+							<div><a href=""><img src="images/co/1.jpg" alt=""></a></div>
+							<span>异度之刃2 焰</span>
+							<div><a href="##" class="resPrice">1350元</a></div>
+						</li>
+						<li>
+							<div><a href=""><img src="images/co/1.jpg" alt=""></a></div>
+							<span>异度之刃2 焰</span>
+							<div><a href="##" class="resPrice">1350元</a></div>
+						</li>
+						<li>
+							<div><a href=""><img src="images/co/1.jpg" alt=""></a></div>
+							<span>异度之刃2 焰</span>
+							<div><a href="##" class="resPrice">1350元</a></div>
+						</li>
+						<li>
+							<div><a href=""><img src="images/co/1.jpg" alt=""></a></div>
+							<span>异度之刃2 焰</span>
+							<div><a href="##" class="resPrice">1350元</a></div>
+						</li>
+						<li>
+							<div><a href=""><img src="images/co/2.jpg" alt=""></a></div>
+							<span>泽村·斯潘塞·英梨梨</span>
+							<div><a href="##" class="resPrice">983元</a></div>
+						</li>
+						<li>
+							<div><a href=""><img src="images/co/2.jpg" alt=""></a></div>
+							<span>泽村·斯潘塞·英梨梨</span>
+							<div><a href="##" class="resPrice">983元</a></div>
+						</li>
+						<li>
+							<div><a href=""><img src="images/co/2.jpg" alt=""></a></div>
+							<span>泽村·斯潘塞·英梨梨</span>
+							<div><a href="##" class="resPrice">983元</a></div>
+						</li>
+						<li>
+							<div><a href=""><img src="images/co/2.jpg" alt=""></a></div>
+							<span>泽村·斯潘塞·英梨梨</span>
+							<div><a href="##" class="resPrice">983元</a></div>
+						</li>
+						<li>
+							<div><a href=""><img src="images/co/3.jpg" alt=""></a></div>
+							<span>两仪式-梦幻般的岁月痕迹</span>
+							<div><a href="##" class="resPrice">510元</a></div>
+						</li>
+						<li>
+							<div><a href=""><img src="images/co/3.jpg" alt=""></a></div>
+							<span>两仪式-梦幻般的岁月痕迹</span>
+							<div><a href="##" class="resPrice">510元</a></div>
+						</li>
+						<li>
+							<div><a href=""><img src="images/co/3.jpg" alt=""></a></div>
+							<span>两仪式-梦幻般的岁月痕迹</span>
+							<div><a href="##" class="resPrice">510元</a></div>
+						</li>
+						<li>
+							<div><a href=""><img src="images/co/3.jpg" alt=""></a></div>
+							<span>两仪式-梦幻般的岁月痕迹</span>
+							<div><a href="##" class="resPrice">510元</a></div>
+						</li>
+						<li>
+							<div><a href=""><img src="images/co/4.jpg" alt=""></a></div>
+							<span>蕾姆 生日蛋糕ver</span>
+							<div><a href="##" class="resPrice">756元</a></div>
+						</li>
+						<li>
+							<div><a href=""><img src="images/co/4.jpg" alt=""></a></div>
+							<span>蕾姆 生日蛋糕ver</span>
+							<div><a href="##" class="resPrice">756元</a></div>
+						</li>
+						<li>
+							<div><a href=""><img src="images/co/4.jpg" alt=""></a></div>
+							<span>蕾姆 生日蛋糕ver</span>
+							<div><a href="##" class="resPrice">756元</a></div>
+						</li>
+						<li>
+							<div><a href=""><img src="images/co/4.jpg" alt=""></a></div>
+							<span>蕾姆 生日蛋糕ver</span>
+							<div><a href="##" class="resPrice">756元</a></div>
+						</li>
+					</ul>
+					<div class="clear"></div>
+					</div>
+
+					<div class="louti">	
+					<div class="title around">
+						<img src="images/around.png">
+						<h3>周边商品</h3>
+						<span><a href="">查看更多></a></span>
+					</div>
+					<ul class="resContent aroundGoods">
+						<li>
+							<div><a href=""><img src="images/around/1.png" alt=""></a></div>
+							<span>舰队collection 镇守府(猫)</span>
+							<div><a href="##" class="resPrice">143元</a></div>
+						</li>
+						<li>
+							<div><a href=""><img src="images/around/2.jpg" alt=""></a></div>
+							<span>Fate/Grand Order 从漫画了解FGO!第二话</span>
+							<div><a href="##" class="resPrice">209元</a></div>
+						</li>
+						<li>
+							<div><a href=""><img src="images/around/3.jpg" alt=""></a></div>
+							<span>大只盒蛋 卡卡西忍犬帕克</span>
+							<div><a href="##" class="resPrice">163元</a></div>
+						</li>
+						<li>
+							<div><a href=""><img src="images/around/4.png" alt=""></a></div>
+							<span>舰队collection 镇守府(猫)</span>
+							<div><a href="##" class="resPrice">143元</a></div>
+						</li>
+						<li>
+							<div><a href=""><img src="images/around/5.jpg" alt=""></a></div>
+							<span>Fate/Grand Order 从漫画了解FGO!第二话</span>
+							<div><a href="##" class="resPrice">209元</a></div>
+						</li>
+						<li>
+							<div><a href=""><img src="images/around/6.png" alt=""></a></div>
+							<span>大只盒蛋 卡卡西忍犬帕克</span>
+							<div><a href="##" class="resPrice">163元</a></div>
+						</li>
+						<li>
+							<div><a href=""><img src="images/around/1.png" alt=""></a></div>
+							<span>舰队collection 镇守府(猫)</span>
+							<div><a href="##" class="resPrice">143元</a></div>
+						</li>
+						<li>
+							<div><a href=""><img src="images/around/2.jpg" alt=""></a></div>
+							<span>Fate/Grand Order 从漫画了解FGO!第二话</span>
+							<div><a href="##" class="resPrice">209元</a></div>
+						</li>
+						<li>
+							<div><a href=""><img src="images/around/3.jpg" alt=""></a></div>
+							<span>大只盒蛋 卡卡西忍犬帕克</span>
+							<div><a href="##" class="resPrice">163元</a></div>
+						</li>
+					</ul>
+					<div class="clear"></div>
+					</div>
+				<div class="louti">	
+					<div class="title now">
+						<img src="images/spotgoods.png">
+						<h3>现货推荐</h3>
+						<span><a href="">查看更多></a></span>
+					</div>
+					<ul class="resContent">
+						<li>
+							<div><a href=""><img src="images/now/1.jpg" alt=""></a></div>
+							<span>星光见习魔女 阿斯特蕾亚</span>
+							<div><a href="##" class="resPrice">871元</a></div>
+						</li>
+						<li>
+							<div><a href=""><img src="images/now/1.jpg" alt=""></a></div>
+							<span>星光见习魔女 阿斯特蕾亚</span>
+							<div><a href="##" class="resPrice">871元</a></div>
+						</li>
+						<li>
+							<div><a href=""><img src="images/now/1.jpg" alt=""></a></div>
+							<span>星光见习魔女 阿斯特蕾亚</span>
+							<div><a href="##" class="resPrice">871元</a></div>
+						</li>
+						<li>
+							<div><a href=""><img src="images/now/1.jpg" alt=""></a></div>
+							<span>星光见习魔女 阿斯特蕾亚</span>
+							<div><a href="##" class="resPrice">871元</a></div>
+						</li>
+						<li>
+							<div><a href=""><img src="images/now/2.jpg" alt=""></a></div>
+							<span>爱玩妖精 莲华</span>
+							<div><a href="##" class="resPrice">873元</a></div>
+						</li>
+						<li>
+							<div><a href=""><img src="images/now/2.jpg" alt=""></a></div>
+							<span>爱玩妖精 莲华</span>
+							<div><a href="##" class="resPrice">873元</a></div>
+						</li>
+						<li>
+							<div><a href=""><img src="images/now/2.jpg" alt=""></a></div>
+							<span>爱玩妖精 莲华</span>
+							<div><a href="##" class="resPrice">873元</a></div>
+						</li>
+						<li>
+							<div><a href=""><img src="images/now/2.jpg" alt=""></a></div>
+							<span>爱玩妖精 莲华</span>
+							<div><a href="##" class="resPrice">873元</a></div>
+						</li>
+						<li>
+							<div><a href=""><img src="images/now/3.jpg" alt=""></a></div>
+							<span>路人女主的养成方法 加藤惠</span>
+							<div><a href="##" class="resPrice">873元</a></div>
+						</li>
+						<li>
+							<div><a href=""><img src="images/now/3.jpg" alt=""></a></div>
+							<span>路人女主的养成方法 加藤惠</span>
+							<div><a href="##" class="resPrice">873元</a></div>
+						</li>
+						<li>
+							<div><a href=""><img src="images/now/3.jpg" alt=""></a></div>
+							<span>路人女主的养成方法 加藤惠</span>
+							<div><a href="##" class="resPrice">873元</a></div>
+						</li>
+						<li>
+							<div><a href=""><img src="images/now/3.jpg" alt=""></a></div>
+							<span>路人女主的养成方法 加藤惠</span>
+							<div><a href="##" class="resPrice">873元</a></div>
+						</li>
+					</div>
+					</ul>
+					<div class="clear"></div>
+				</div>
+			</div>	
+			<div class="mainright">
+				<ul class="impnotice">
+					<li>重要通知</li>
+					<li><a href="">03.20 2018清明节假日工作安排</a><div></div></li>
+					<li><a href="">03.23 E特快费用调整通知</a><div></div></li>
+				</ul>
+				<ul class="hot">
+					<li>本周热销商品排行</li>
+					<li>
+						<img src="images/hot/1.png"><span>1位 <a href="##">艶娘幻梦谭 金莲(附原画明信片一张)</a></span>
+						<div></div>
+					</li>
+					<li>
+						<img src="images/hot/2.jpg"><span>2位 <a href="##">初音未来 中秋明月Ver.</a></span>
+						<div></div>
+					</li>
+					<li>
+						<img src="images/hot/3.jpg"><span>3位 <a href="##">初音未来 中秋明月Ver.</a></span>
+						<div></div>
+					</li>
+					<li>
+						<img src="images/hot/1.png"><span>1位 <a href="##">艶娘幻梦谭 金莲(附原画明信片一张)</a></span>
+						<div></div>
+					</li>
+					<li>
+						<img src="images/hot/2.jpg"><span>2位 <a href="##">初音未来 中秋明月Ver.</a></span>
+						<div></div>
+					</li>
+					<li>
+						<img src="images/hot/3.jpg"><span>3位 <a href="##">初音未来 中秋明月Ver.</a></span>
+						<div></div>
+					</li>
+					<li>
+						<img src="images/hot/1.png"><span>1位 <a href="##">艶娘幻梦谭 金莲(附原画明信片一张)</a></span>
+						<div></div>
+					</li>
+					<li>
+						<img src="images/hot/2.jpg"><span>2位 <a href="##">初音未来 中秋明月Ver.</a></span>
+						<div></div>
+					</li>
+					<li>
+						<img src="images/hot/3.jpg"><span>3位 <a href="##">初音未来 中秋明月Ver.</a></span>
+						<div></div>
+					</li>
+					<img src="images/corner.png">
+				</ul>
+				<ul class="friend">
+					<li>友情链接</li>
+					<li><a href="##"><img src="images/friend.png"></a></li>
+				</ul>
+				<ul class="waching friend">
+					<li>大家都在关注</li>
+					<li><a href="##"><img src="images/watch/1.jpg"></a></li>
+					<li><a href="##"><img src="images/watch/2.jpg"></a></li>
+					<li><a href="##"><img src="images/watch/3.jpg"></a></li>
+					<li><a href="##"><img src="images/watch/4.jpg"></a></li>
+					<li><a href="##"><img src="images/watch/5.jpg"></a></li>
+					<li><a href="##"><img src="images/watch/6.jpg"></a></li>
+					<li><a href="##"><img src="images/watch/7.jpg"></a></li>
+					<li><a href="##"><img src="images/watch/8.jpg"></a></li>
+					<li><a href="##"><img src="images/watch/9.jpg"></a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="footer">
+			<div class="info">
+				<ul>
+					<li><a href="##">关于萌购</a></li>
+					<li><a href="##">什么是萌购</a></li>
+					<li><a href="##">如何开始使用萌购</a></li>
+					<li><a href="##">隐私声明</a></li>
+					<li><a href="##">免责及争议解决</a></li>
+					<li><a href="##">交易条款</a></li>
+					<li><a href="##">关税及禁运</a></li>		
+				</ul>
+				<ul>
+					<li><a href="##">订单流程</a></li>
+					<li><a href="##">寻找商品</a></li>
+					<li><a href="##">生成并支付订单</a></li>
+					<li><a href="##">订单处理周期</a></li>
+					<li><a href="##">订单状态说明</a></li>
+					<li><a href="##">从Amazon支持的第三方购买</a></li>
+				</ul>
+				<ul>
+					<li><a href="##">运输方式</a></li>
+					<li><a href="##">国际团发</a></li>
+					<li><a href="##">直发相关</a></li>
+					<li><a href="##">直发运费表</a></li>
+					<li><a href="##">团发运费表</a></li>
+				</ul>
+				<ul>
+					<li><a href="##">费用及后台</a></li>
+					<li><a href="##">费用构成</a></li>
+					<li><a href="##">支付方式</a></li>
+					<li><a href="##">支付运费 合并发货</a></li>
+					<li><a href="##">重量算法</a></li>
+					<li><a href="##">取消订单和退款 </a></li>
+				</ul>
+				<ul>
+					<li><a href="##">全称购物保障</a></li>
+					<li><a href="##">保障范围</a></li>
+					<li><a href="##">保障流程</a></li>
+					<li><a href="##">释义和说明</a></li>
+				</ul>
+			</div>
+			<p>
+				<a href="##">公司简介</a>
+				<a href="##">人才招募</a>
+				<a href="##">商务合作</a>
+			</p>
+			<p>@2018 All rights Reserved | 沪ICP备15028098号</p>
+			<p><img src="images/zfb.jpg"><span></span></p>
+		</div>
+		
+		<ul class="floor">
+			<li><span>回到顶部</span></li>
+			<li><span>手办预定</span></li>
+			<li><span>周边商品</span></li>
+			<li><span>现货推荐</span></li>
+		</ul>
+		
+	</div>
+</body>
+</html>
+<script type="text/javascript" src="jquery-1.11.1.js"></script>
+<script type="text/javascript">
+	//轮播图
+	var timer = setInterval(autoPlay,1500);
+	var index = 0;
+	function autoPlay(){
+		index++;
+		if (index == 10) {
+			index = 0;
+		}
+		$(".banol li").eq(index).addClass("current").siblings().removeClass('current');
+		$(".banul li").eq(index).fadeIn(1000).siblings().fadeOut(1000);
+	}
+	$(".banol li").mouseenter(function(){
+		clearInterval(timer);
+		index = $(this).index();
+		$(this).addClass("current").siblings().removeClass('current');
+		$(".banul li").eq($(this).index()).fadeIn(1000).siblings().fadeOut(1000);
+	});
+	/*$(".banol li").mouseleave(function(){
+		timer = setInterval(autoPlay,1500);
+	});*/
+	$(".banner").mouseenter(function(){
+		clearInterval(timer);
+	})
+	$(".banner ul").mouseleave(function(){
+		timer = setInterval(autoPlay,1500);
+	})
+
+	//搜索引擎选择 亚马逊or骏河屋
+	$(".Amazon").mouseenter(function(){
+		$(this).find("ul").css("display","block");//显示
+		$(this).find("a").css("background","#fdedd4");//背景颜色
+		/*$(this).find("img").addClass("rotateanti");//鼠标移入 添加逆时针转动的动画的箭头*/
+		$(this).on("mouseenter","li",function(){
+			$(this).css("background","snow"); 
+		});
+		$(this).on("mouseleave","li",function(){
+			$(this).css("background","#f2f0ed"); 
+		});
+		$(this).on("click","li",function(){ //点击内容变化
+			$(".Amazon a").html($(this).html()); 
+		});
+	})
+	$(".Amazon").mouseleave(function(){
+		$(this).find("a").css("background","#f2f0ed");
+		$(this).find("ul").css("display","none");
+	})
+
+	//楼梯效果
+	//点击左边楼梯 跳转至对应楼层
+	var arr=[".top",".reserve",".around",".now"];
+	$(".floor li").click(function(){
+		//点击变色
+		$(this).addClass("active").siblings().removeClass("active");
+		/*console.log(arr[$(this).index()]);*/
+		//跳转至对应楼层
+		var bodytop = $(arr[$(this).index()]).eq(0).offset().top;
+		console.log(bodytop);
+		$("body,html").animate({"scrollTop":bodytop},1000);
+
+	})
+
+	//操作滚动条,左边楼梯对应变色
+	$(window).scroll(function(){
+		var sTop = $(document).scrollTop()+$(window).innerHeight()/2;//获取页面滚走的距离
+		//遍历所有楼层 找到满足条件的楼层
+		if (sTop<$(".reserve").eq(0).offset().top) {
+			$(".floor li").removeClass("active");
+		} else if(sTop>$(".now").eq(0).offset().top){
+			$(".floor li:last").addClass("active").siblings().removeClass("active");
+		}else {
+			for (var i=1;i<arr.length;i++){
+				if($(arr[i]).offset().top>sTop){
+					console.log($(arr[i]));
+					$(".floor li").eq(i-1).addClass("active").siblings().removeClass("active");
+					break;
+				}
+			}
+		}
+
+	});
+
+</script>
